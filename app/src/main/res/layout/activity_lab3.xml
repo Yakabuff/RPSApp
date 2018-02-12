@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="eecs1022.lab3.Lab3Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Name of Player 1:"
+        android:id="@+id/textEnterName1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter name of Player 2"
+        android:id="@+id/textEnterName2"
+        android:textAlignment="viewEnd"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editName1"
+        android:layout_below="@+id/textEnterName1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textEnterName1"
+        android:layout_alignEnd="@+id/textEnterName1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editName2"
+        android:layout_alignBottom="@+id/editName1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/textEnterName2"
+        android:layout_alignStart="@+id/textEnterName2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Round1"
+        android:id="@+id/textRound1"
+        android:layout_below="@+id/editName1"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player1"
+        android:id="@+id/textP1R1"
+        android:layout_below="@+id/textRound1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Palyer 2"
+        android:id="@+id/textP2R1"
+        android:layout_below="@+id/textP1R1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerP1R1Choice"
+        android:layout_above="@+id/textP2R1"
+        android:layout_toRightOf="@+id/textP2R1"
+        android:layout_toEndOf="@+id/textP2R1"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:entries="@array/playerOptions"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerP2R1Choice"
+        android:layout_below="@+id/spinnerP1R1Choice"
+        android:layout_alignLeft="@+id/spinnerP1R1Choice"
+        android:layout_alignStart="@+id/spinnerP1R1Choice"
+        android:entries="@array/playerOptions"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish Round 1"
+        android:id="@+id/buttonFinishRound1"
+        android:layout_below="@+id/textRound1"
+        android:layout_alignLeft="@+id/editName2"
+        android:layout_alignStart="@+id/editName2"
+        android:onClick="computeRound1Clicked" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Round 2"
+        android:id="@+id/textRound2"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/buttonFinishRound1"
+        android:layout_alignLeft="@+id/textRound1"
+        android:layout_alignStart="@+id/textRound1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 1"
+        android:id="@+id/textP1R2"
+        android:layout_below="@+id/textRound2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 2"
+        android:id="@+id/textP2R2"
+        android:layout_below="@+id/textP1R2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish Round 2"
+        android:id="@+id/buttonFinishRound2"
+        android:layout_alignTop="@+id/spinnerP1R2Choice"
+        android:layout_alignLeft="@+id/buttonFinishRound1"
+        android:layout_alignStart="@+id/buttonFinishRound1"
+        android:onClick="computeRound2Clicked" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerP1R2Choice"
+        android:layout_alignTop="@+id/textP1R2"
+        android:layout_alignLeft="@+id/spinnerP2R1Choice"
+        android:layout_alignStart="@+id/spinnerP2R1Choice"
+        android:entries="@array/playerOptions"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerP2R2Choice"
+        android:layout_alignTop="@+id/textP2R2"
+        android:layout_alignLeft="@+id/spinnerP1R2Choice"
+        android:layout_alignStart="@+id/spinnerP1R2Choice"
+        android:entries="@array/playerOptions"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Round 3"
+        android:id="@+id/textRound3"
+        android:layout_below="@+id/buttonFinishRound2"
+        android:layout_alignLeft="@+id/textRound1"
+        android:layout_alignStart="@+id/textRound1"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player1"
+        android:id="@+id/textP1R3"
+        android:layout_below="@+id/textRound3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 2"
+        android:id="@+id/textP2R3"
+        android:layout_below="@+id/textP1R3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerP1R3Choice"
+        android:layout_below="@+id/textRound3"
+        android:layout_alignLeft="@+id/spinnerP2R2Choice"
+        android:layout_alignStart="@+id/spinnerP2R2Choice"
+        android:entries="@array/playerOptions"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerP2R3Choice"
+        android:layout_below="@+id/spinnerP1R3Choice"
+        android:layout_alignLeft="@+id/spinnerP1R3Choice"
+        android:layout_alignStart="@+id/spinnerP1R3Choice"
+        android:entries="@array/playerOptions"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish Round 3"
+        android:id="@+id/buttonFinishRound3"
+        android:layout_alignLeft="@+id/buttonFinishRound2"
+        android:layout_alignStart="@+id/buttonFinishRound2"
+        android:layout_below="@+id/textRound3"
+        android:layout_alignRight="@+id/buttonFinishRound2"
+        android:layout_alignEnd="@+id/buttonFinishRound2"
+        android:onClick="computeRound3Clicked" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start a new game"
+        android:id="@+id/buttonStartNewGame"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/spinnerP2R3Choice"
+        android:layout_alignStart="@+id/spinnerP2R3Choice"
+        android:onClick="startNewGameClicked" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textResult"
+        android:layout_above="@+id/buttonStartNewGame"
+        android:layout_alignLeft="@+id/buttonStartNewGame"
+        android:layout_alignStart="@+id/buttonStartNewGame"
+        android:layout_marginBottom="34dp"
+        android:layout_alignRight="@+id/buttonStartNewGame"
+        android:layout_alignEnd="@+id/buttonStartNewGame"
+        android:text="New game started. Enter names of players" />
+</RelativeLayout>
